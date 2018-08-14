@@ -10,7 +10,6 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 
-
 public class MaskCpf {
 
     private static final String maskCPF = "###.###.###-##";
@@ -19,7 +18,7 @@ public class MaskCpf {
         return s.replaceAll("[^0-9]*", "");
     }
 
-//    static Utilities utilities =  new Utilities();
+
 
     public static TextWatcher insert(final EditText editText) {
         return new TextWatcher() {
@@ -39,7 +38,7 @@ public class MaskCpf {
                 }
                 int i = 0;
                 for (char m : mask.toCharArray()) {
-                    if ((m != '#' && str.length() > old.length()) || (m != '#' && str.length() < old.length() && str.length() != i)) {
+                    if ((m != '#' && str.length() > old.length()) || (m != '#' && str.length() <= old.length() && str.length() != i)) {
                         mascara += m;
                         continue;
                     }
@@ -52,24 +51,21 @@ public class MaskCpf {
                     i++;
                 }
                 isUpdating = true;
-                int k = editText.getSelectionStart();
-                editText.setText(mascara);
-                if(editText.getText().toString().contains("."))
-                editText.setSelection(k);
+                int cursor = editText.getSelectionEnd();
+                int tamText = mascara.length();
+                boolean inclusao = false;
 
-                if(editText.getText().toString().length() >= 14){
-//                    Drawable checked = editText.getResources().getDrawable(R.drawable.ic_check_verde);
-//                    editText.setCompoundDrawablesWithIntrinsicBounds(null,null,checked,null);
-
-//                    utilities.habilitaBotao(button);
-
-                }else{
-//                    Drawable unChecked = editText.getResources().getDrawable(R.drawable.ic_check_branco);
-                    editText.setCompoundDrawablesWithIntrinsicBounds(null,null,null,null);
-
-//                    utilities.desabilitaBotao(button);
-
+                if (str.length() > old.length()) {
+                    inclusao = true;
                 }
+                if(cursor == 3 || (cursor == 4 && inclusao) || cursor == 7 || (cursor == 8 && inclusao)
+                        || cursor == 11 || (cursor == 12 && inclusao))
+                    cursor++;
+                if(cursor >  tamText) cursor = tamText;
+                editText.setText(mascara);
+                editText.setSelection(cursor);
+//                editText.setSelection(mascara.length());
+                if(editText.getText().toString().length() >= 14){}else{}
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count,
@@ -82,3 +78,4 @@ public class MaskCpf {
     }
 
 }
+
