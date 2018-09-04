@@ -26,4 +26,40 @@
         android:singleLine="true" />
 
 
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edtCpf2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:cursorVisible="true"
+        android:gravity="center"
+        android:hint="CPF com mascara antiga"
+        android:inputType="number"
+        android:paddingBottom="4dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="4dp"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/edtCpf"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edtCel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:cursorVisible="true"
+        android:gravity="center"
+        android:hint="NúmeroTelefone"
+        android:inputType="number"
+        android:paddingBottom="4dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="4dp"
+        android:singleLine="true"
+        app:layout_constraintTop_toBottomOf="@+id/edtCpf2"
+        tools:layout_editor_absoluteX="16dp" />
+
 </android.support.constraint.ConstraintLayout>

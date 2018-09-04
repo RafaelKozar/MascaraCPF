@@ -14,10 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         edtCpf.addTextChangedListener(MaskCpf.insert(edtCpf))
-        /*edtCpf.addTextChangedListener(MascaraNumericaTextWatcher.Builder()
-                .paraMascara("###.###.###-##")
-                .comValidador(Validador.CPF)
-                .build())*/
+        edtCpf2.addTextChangedListener(MaskCpf2.insert(edtCpf2))
+        edtCel.addTextChangedListener(MaskGenerica.insert("(##)#####-####", edtCel))
     }
 
 
