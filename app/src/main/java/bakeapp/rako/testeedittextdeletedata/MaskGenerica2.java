@@ -8,7 +8,7 @@ import android.widget.EditText;
  * Created by rako on 04/09/2018.
  */
 
-public class MaskGenerica {
+public class MaskGenerica2 {
 
     public static String unmask(String s) {
         return s.replaceAll("[.]", "").replaceAll("[-]", "")
@@ -22,7 +22,7 @@ public class MaskGenerica {
             String old = "";
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                String str = MaskGenerica.unmask(s.toString());
+                String str = MaskGenerica2.unmask(s.toString());
                 String mascara = "";
                 if (isUpdating) {
                     old = str;

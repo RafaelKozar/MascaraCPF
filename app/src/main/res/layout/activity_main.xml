@@ -15,10 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:inputType="number"
         android:cursorVisible="true"
         android:gravity="center"
         android:hint="CPF"
+        android:inputType="number"
         android:paddingBottom="4dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
@@ -60,6 +60,25 @@
         android:paddingTop="4dp"
         android:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/edtCpf2"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <!-- <com.rengwuxian.materialedittext.MaterialEditText
+         android:id="@+id/edtCel2"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="8dp"
+         android:cursorVisible="true"
+         android:gravity="center"
+         android:hint="Número Telefone Menor"
+         android:inputType="number"
+         android:paddingBottom="4dp"
+         android:paddingLeft="15dp"
+         android:paddingRight="15dp"
+         android:paddingTop="4dp"
+         android:singleLine="true"
+         app:layout_constraintTop_toBottomOf="@+id/edtCel"
+         tools:layout_editor_absoluteX="0dp" />-->
 
 </android.support.constraint.ConstraintLayout>

@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         edtCpf.addTextChangedListener(MaskCpf.insert(edtCpf))
         edtCpf2.addTextChangedListener(MaskCpf2.insert(edtCpf2))
         edtCel.addTextChangedListener(MaskGenerica.insert("(##)#####-####", edtCel))
+//        edtCel2.addTextChangedListener(MaskGenerica.insert("(##)#####-####", edtCel2))
     }
 
 
