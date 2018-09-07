@@ -53,12 +53,12 @@ public class MaskGenerica2 {
                 //0  4  9
 
                 isUpdating = true;
-                int cursor = editText.getSelectionEnd();
+
                 int tamText = mascara.length();
                 String editTextString = editText.getText().toString();
 
-                getCursor10Digitos(cursor, editTextString, str, old);
-                if (cursor > tamText) cursor = tamText;
+                int cursor = getCursor10Digitos(editText.getSelectionEnd(), editTextString, str, old, tamText);
+
                 editText.setText(mascara);
                 editText.setSelection(cursor);
             }
@@ -72,7 +72,7 @@ public class MaskGenerica2 {
     }
 
 
-    public static int getCursor10Digitos(int cursor, String editTextString, String str, String old) {
+    public static int getCursor10Digitos(int cursor, String editTextString, String str, String old, int tamText) {
         boolean inclusao = false;
         boolean withMask = false;
 
@@ -100,6 +100,7 @@ public class MaskGenerica2 {
             else cursor--;
         }
 
+        if (cursor > tamText) cursor = tamText;
         return cursor;
     }
 

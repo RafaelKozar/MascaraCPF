@@ -58,8 +58,7 @@ public class MaskCpf {
                 if (str.length() > old.length()) {
                     inclusao = true;
                 }
-                if(cursor == 3 || (cursor == 4 && inclusao) || cursor == 7 || (cursor == 8 && inclusao)
-                        || cursor == 11 || (cursor == 12 && inclusao))
+                if(cursor == 3 ||  cursor == 7 || cursor == 11 || ((cursor == 4 || cursor == 8 || cursor == 12) && inclusao))
                     cursor++;
                 if(cursor >  tamText) cursor = tamText;
                 editText.setText(mascara);
